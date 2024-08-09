@@ -39,7 +39,7 @@ struct CSIDataQueueOpaque
     size_t activeLength;
 };
 
-CSIDataQueueRef CSIDataQueueCreate()
+CSIDataQueueRef CSIDataQueueCreate(void)
 {
     
     CSIDataQueueRef queue = (CSIDataQueueRef)malloc(sizeof(struct CSIDataQueueOpaque));
@@ -162,7 +162,7 @@ void CSIDataQueueClear(CSIDataQueueRef queue)
     queue->activeLength = 0;
 }
 
-int CSIDataQueueRunTests()
+int CSIDataQueueRunTests(void)
 {
     char* testInput = "1234567890";
     char* clearedInput = "0987654321";
